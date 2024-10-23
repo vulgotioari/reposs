@@ -1,0 +1,43 @@
+create database projetofinal;
+use projetofinal;
+-- tabela usuarios
+CREATE TABLE usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    nome_usuario VARCHAR(50) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL
+);
+-- Tabela de Clientes
+CREATE TABLE clientes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    endereco VARCHAR(255) NOT NULL,
+    telefone VARCHAR(20) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    cpf_cnpj VARCHAR(20) NOT NULL UNIQUE
+);
+-- Tabela de Agenda
+create table agendas(
+idAgendamento int primary key,
+nomeCliente varchar (20) not null,
+conteudo varchar (100) not null,
+datas date,
+hora time
+);
+select * from agendas;
+
+
+select * from clientes;
+-- Inserir dados na tabela(create)
+insert into usuarios(id, nome, email, nome_usuario, senha)
+values(1, 'Maria Fernanda', 'fernanda@gmail.com', 'fernanda','123456');
+select * from usuarios;	
+
+delete from usuarios where id = 2;
+
+
+insert into clientes(id, nome, endereco, telefone, email, cpf_cnpj)
+values(1, 'otavio','Carioca','51996760305','otaviosengerprometa@gmail.com','05399964082');
+
+delete from usuarios where id = 2;
